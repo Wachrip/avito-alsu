@@ -22,7 +22,7 @@ class CategoryListTile extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: 50, // Height is 50px as requested
+        height: 50,
         decoration: BoxDecoration(
           color: cardBackground,
           borderRadius: BorderRadius.circular(10),
@@ -38,7 +38,6 @@ class CategoryListTile extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Row(
             children: [
-              // Image icon
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Image.asset(
@@ -48,11 +47,7 @@ class CategoryListTile extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
-
-              // Spacing between icon and text
               const SizedBox(width: 15),
-
-              // Title
               Expanded(
                 child: Text(
                   title,
@@ -65,8 +60,6 @@ class CategoryListTile extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-
-              // Optional chevron indicator
               Icon(
                 Icons.chevron_right,
                 color: cardText.withOpacity(0.5),

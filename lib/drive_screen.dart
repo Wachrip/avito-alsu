@@ -13,7 +13,6 @@ class DriveScreen extends StatefulWidget {
 }
 
 class _DriveScreenState extends State<DriveScreen> {
-  // Add selection state variables
   int? selectedIndex;
   int? selectedRow; // 0 for top row, 1 for bottom row
 
@@ -117,13 +116,11 @@ class _DriveScreenState extends State<DriveScreen> {
   ];
 
   void onCategoryTap(int row, int index, ListItem item) {
-    // Update selection state
     setState(() {
       selectedRow = row;
       selectedIndex = index;
     });
 
-    // Navigate to detail screen
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => DetailScreen(title: item.title)),
@@ -131,13 +128,11 @@ class _DriveScreenState extends State<DriveScreen> {
   }
 
   void onViewAllTap() {
-    // Update selection state
     setState(() {
       selectedRow = null;
-      selectedIndex = 9999; // Special value for "View All"
+      selectedIndex = 9999;
     });
 
-    // Navigate to all categories screen with both lists
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -152,7 +147,6 @@ class _DriveScreenState extends State<DriveScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Get theme colors
     final CustomColors customColors =
         Theme.of(context).extension<CustomColors>()!;
 
@@ -162,28 +156,21 @@ class _DriveScreenState extends State<DriveScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 10),
-
-            // Two-row category carousel with single scroll
             SizedBox(
-              height: 198, // Height for both rows + spacing
+              height: 198,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Left fixed padding
                   const SizedBox(width: 8),
-
-                  // Main scrollable content
                   Expanded(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Two rows stacked vertically
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Top row
                               SizedBox(
                                 height: 95,
                                 child: Row(
@@ -210,10 +197,7 @@ class _DriveScreenState extends State<DriveScreen> {
                                   ),
                                 ),
                               ),
-
-                              const SizedBox(height: 6), // Space between rows
-
-                              // Bottom row
+                              const SizedBox(height: 6),
                               SizedBox(
                                 height: 95,
                                 child: Row(
@@ -242,8 +226,6 @@ class _DriveScreenState extends State<DriveScreen> {
                               ),
                             ],
                           ),
-
-                          // "View All" button at the end (spans both rows)
                           Padding(
                             padding: const EdgeInsets.only(left: 2),
                             child: GestureDetector(
@@ -258,23 +240,16 @@ class _DriveScreenState extends State<DriveScreen> {
                               ),
                             ),
                           ),
-
-                          // Add some padding at the end
                           const SizedBox(width: 8),
                         ],
                       ),
                     ),
                   ),
-
-                  // Right fixed padding
                   const SizedBox(width: 8),
                 ],
               ),
             ),
-
             const SizedBox(height: 20),
-
-            // Mechanics section (from original code)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
@@ -367,7 +342,6 @@ class CategoryCard extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // Text positioned at top-left
           Positioned(
             top: 15,
             left: 15,
@@ -385,8 +359,6 @@ class CategoryCard extends StatelessWidget {
               ),
             ),
           ),
-
-          // Image positioned at bottom-right
           Positioned(
             bottom: 0,
             right: 0,

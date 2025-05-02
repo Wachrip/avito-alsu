@@ -36,8 +36,8 @@ class AppTheme {
       titleLarge: TextStyle(color: Colors.black87),
     ),
     // Add extension for our custom colors
-    extensions: [
-      const CustomColors(
+    extensions: const [
+      CustomColors(
         cardBackground: Colors.white,
         cardText: Colors.black87,
         viewAllCardBackground: Colors.grey,
@@ -65,7 +65,6 @@ class AppTheme {
       bodyMedium: TextStyle(color: Colors.white),
       titleLarge: TextStyle(color: Colors.white),
     ),
-    // Add extension for our custom colors
     extensions: [
       CustomColors(
         cardBackground: Colors.black.withOpacity(0.8),
@@ -76,7 +75,6 @@ class AppTheme {
   );
 }
 
-// Extension to store our custom colors
 class CustomColors extends ThemeExtension<CustomColors> {
   final Color cardBackground;
   final Color cardText;
