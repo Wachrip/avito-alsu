@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'all_categories_screen.dart';
+import 'detail_screen.dart';
 import 'list_item.dart';
 
 class DriveScreen extends StatefulWidget {
@@ -84,7 +86,11 @@ class _DriveScreenState extends State<DriveScreen> {
 
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => const AllCategoriesScreen()),
+      MaterialPageRoute(
+          builder: (_) => AllCategoriesScreen(
+                list1: list1,
+                list2: list2,
+              )),
     );
   }
 
@@ -367,32 +373,6 @@ class ViewAllCard extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class DetailScreen extends StatelessWidget {
-  final String title;
-
-  const DetailScreen({super.key, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(child: Text('Контент: $title')),
-    );
-  }
-}
-
-class AllCategoriesScreen extends StatelessWidget {
-  const AllCategoriesScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Бардык категориялар')),
-      body: const Center(child: Text('Бул жерде бардык категориялар болот')),
     );
   }
 }
