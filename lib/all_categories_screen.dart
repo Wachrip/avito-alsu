@@ -1,3 +1,4 @@
+import 'package:avito_test/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'category_list_tile.dart';
@@ -18,6 +19,9 @@ class AllCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CustomColors customColors =
+        Theme.of(context).extension<CustomColors>()!;
+
     final List<ListItem> allCategories = [...list1, ...list2, ...list3];
 
     return Scaffold(
@@ -29,6 +33,9 @@ class AllCategoriesScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return CategoryListTile(
             title: allCategories[index].title,
+            imagePath: allCategories[index].imagePath,
+            cardBackground: customColors.cardBackground,
+            cardText: customColors.cardText,
             onTap: () {
               Navigator.push(
                 context,
