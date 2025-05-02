@@ -7,16 +7,18 @@ import 'list_item.dart';
 class AllCategoriesScreen extends StatelessWidget {
   final List<ListItem> list1;
   final List<ListItem> list2;
+  final List<ListItem> list3;
 
   const AllCategoriesScreen({
     super.key,
     required this.list1,
     required this.list2,
+    required this.list3,
   });
 
   @override
   Widget build(BuildContext context) {
-    final List<ListItem> allCategories = [...list1, ...list2];
+    final List<ListItem> allCategories = [...list1, ...list2, ...list3];
 
     return Scaffold(
       appBar: AppBar(title: const Text('Бардык категориялар')),

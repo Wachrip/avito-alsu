@@ -17,14 +17,14 @@ class _DriveScreenState extends State<DriveScreen> {
 
   final List<ListItem> list1 = [
     ListItem(
-      title: 'Двигатель и запчасти',
-      imagePath: 'assets/images/image2.png',
-      width: 170,
-    ),
-    ListItem(
       title: 'Услуги',
       imagePath: 'assets/images/image1.png',
-      width: 120,
+      width: 180,
+    ),
+    ListItem(
+      title: 'Двигатель и запчасти',
+      imagePath: 'assets/images/image2.png',
+      width: 180,
     ),
     ListItem(
       title: 'Трансмис-сия',
@@ -35,6 +35,21 @@ class _DriveScreenState extends State<DriveScreen> {
       title: 'Детали ходовой части',
       imagePath: 'assets/images/image4.png',
       width: 180,
+    ),
+    ListItem(
+      title: 'Cистема  охлаждения',
+      imagePath: 'assets/images/image5.png',
+      width: 180,
+    ),
+    ListItem(
+      title: 'Рулувая часть',
+      imagePath: 'assets/images/image6.png',
+      width: 180,
+    ),
+    ListItem(
+      title: 'Тормозная система',
+      imagePath: 'assets/images/image7.png',
+      width: 170,
     ),
   ];
 
@@ -50,19 +65,52 @@ class _DriveScreenState extends State<DriveScreen> {
       width: 110,
     ),
     ListItem(
-      title: 'Система охлаждения',
-      imagePath: 'assets/images/image5.png',
-      width: 140,
-    ),
-    ListItem(
-      title: 'Рулевая часть',
-      imagePath: 'assets/images/image6.png',
-      width: 130,
-    ),
-    ListItem(
       title: 'Кузовные элементы',
       imagePath: 'assets/images/image10.png',
       width: 160,
+    ),
+    ListItem(
+      title: 'Cалон и интерьер',
+      imagePath: 'assets/images/image11.png',
+      width: 160,
+    ),
+    ListItem(
+      title: 'Масло и автохимия',
+      imagePath: 'assets/images/image12.png',
+      width: 160,
+    ),
+    ListItem(
+      title: 'Шины и диски',
+      imagePath: 'assets/images/image13.png',
+      width: 240,
+    ),
+    ListItem(
+      title: 'Тюнкинг и стайлинг',
+      imagePath: 'assets/images/image14.png',
+      width: 240,
+    ),
+  ];
+
+  final List<ListItem> list3 = [
+    ListItem(
+      title: 'Автоаксессуары',
+      imagePath: 'assets/images/image15.png',
+      width: 180,
+    ),
+    ListItem(
+      title: 'Запчасти спецтехники',
+      imagePath: 'assets/images/image16.png',
+      width: 180,
+    ),
+    ListItem(
+      title: 'Мото запчасти',
+      imagePath: 'assets/images/image17.png',
+      width: 180,
+    ),
+    ListItem(
+      title: 'Авто на разбор',
+      imagePath: 'assets/images/image18.png',
+      width: 180,
     ),
   ];
 
@@ -90,6 +138,7 @@ class _DriveScreenState extends State<DriveScreen> {
           builder: (_) => AllCategoriesScreen(
                 list1: list1,
                 list2: list2,
+                list3: list3,
               )),
     );
   }
